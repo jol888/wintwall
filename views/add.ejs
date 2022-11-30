@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="./js/jquery.js"></script>
+        <script src="./popper.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <style>
+            body{background:url('./bg.png') center no-repeat fixed; background-size:cover}
+            .navbar{
+                margin-bottom:0px
+            }
+            #lst{
+                background-color:rgba(10,10,10,0.4);
+                margin:0px 30px 30px 30px ;
+                
+            
+            }
+            .card{
+                opacity: 0.6;
+            }
+            .navbar{
+                opacity: 0.9;
+                
+            }
+            
+            </style>
+<meta name="viewport" content="width=device-width, user-scalable=no, 
+initial-scale=1.0, maximumscale=1.0, minimum-scale=1.0">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">GWhiteWall</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">表白墙</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="add.php">写纸条</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    友链
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Jol888</a>
+                    <a class="dropdown-item" href="#">DLL</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">加入我们</a>
+                  </div>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="看看有咩有你的名字" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">查找</button>
+              </form>
+            </div>
+          </nav>
+<div id="lst">
+<span class="text-light"><h1 align='center'>写纸条</h1></span>
+<form style="margin:0px 50px" action="./add" method="get">
+  <div class="form-group">
+    <label for="exampleBT1" class="text-light">标题</label>
+    <input class="form-control bg-dark text-light" id="exampleBT1" name="title" aria-describedby="BTHelp">
+    <small id="BTHelp" class="form-text text-muted">这将显示在您纸条的最上方。搜索功能将检索此栏，建议将对象的名字写在此处。</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleZW1" class="text-light">正文</label>
+    <textarea class="form-control bg-dark text-light" id="exampleZW1" name="note" aria-describedby="ZWHelp"  rows="10"></textarea>
+    <small id="ZWHelp" class="form-text text-muted">这是纸条的内容。支持HTML。（请勿滥用）</small>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleSM1" class="text-light">署名</label>
+    <input class="form-control bg-dark text-light" id="exampleSM1" name="nickname"aria-describedby="SMHelp">
+    <small id="SMHelp" class="form-text text-muted">这将显示在标题下方。</small>
+  </div>
+<div class="form-group">
+    <label for="exampleInputPassword1" class="text-light">密钥</label>
+    <input type="password" class="form-control bg-dark text-light" name="passwd"id="exampleInputPassword1">
+    <small id="passHelp" class="form-text text-muted">这是您认领纸条的凭据。拥有了凭据，您便可以删除、修改该张纸条。请妥善保管它。</small>
+    <div class="form-group">
+    <label for="exampleInputEmail1" class="text-light">联系方式</label>
+    <input class="form-control bg-dark text-light" id="exampleInputEmail1" name="contact" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">
+    </small>
+  </div>
+  <div hidden>
+    <div class="form-group">
+    <label for="em" class="text-light">邮箱</label><label id="err" class="text-light"></label>
+    <input class="form-control bg-dark text-light" id="em" name="email" value ="all" aria-describedby="emailHelp">
+    <button type="button" class="btn btn-primary  bg-dark text-light" id="yz">发送验证码</button>
+    <a class="btn btn-outline-danger my-2 my-sm-0" type="button">没有邮箱？</a>
+    <small id="emailHelp" class="form-text text-muted">
+    </small>
+  </div>
+    <div class="form-group">
+    <label for="exampleInputEmail1" class="text-light">验证码</label>
+    <input class="form-control bg-dark text-light" id="exampleInputEmail1" name="fns" value ="all" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted">
+    </small>
+  </div>
+</div>
+  
+  <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" name="ok" id="exampleCheck1">
+    <label class="form-check-label  bg-dark text-light" for="exampleCheck1">已阅读并同意《用户条款》</label>
+  </div>
+  <input type="hidden" name="submit" value="233">
+  <button type="submit" class="btn btn-primary  bg-dark text-light">提交</button>
+</form>
+</div>
+  </div>
+  <script scr="./js/jquery.js">
+    $('#yz').click(function(){
+        $.ajax({
+             type: "GET",
+             url: "/getemailcode",
+             data: {email:$("#em").val()},
+             dataType: "text",
+             async:true,
+             error: function(XMLHttpRequest, textStatus, errorThrown) {
+             },
+             complete: ()=> $("#err").html="ok"
+         });
+    })
+</script>
+    </body>
+</html>

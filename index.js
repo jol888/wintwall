@@ -8,7 +8,7 @@ const smtpTransport = require('nodemailer-smtp-transport');
 const assert = require('http-assert');
 const fs = require('fs');
 
-const dev=process.env.USERNAME=='jolli';
+const dev=process.env.USERNAME=='REPLACEME';//开发环境中的用户名
 
 console.log(dev?"dev":"product");
 
@@ -22,24 +22,24 @@ app.use((req, res, next) => {
 
 /////////constes/////////
 
-const SENDER='jolliu@outlook.com';
+const SENDER='REPLACEME';//邮箱地址
 
 const emailcofig={
-        host: 'smtp.office365.com', // 服务
-        port: 587, // smtp端口
+        host: 'REPLACEME', // 服务器
+        port: REPLACEME, // smtp端口
         secure: false,
         auth: {
           user: SENDER, //用户名
-          pass: 'Yuxuan20090224' // SMTP授权码
+          pass: 'REPLACEME' // SMTP授权码
       }
   };
 
 /////////sql/////////
 
 const sql = mysql.createConnection({
-   host: 'localhost',
-   user: 'root',
-   password: (dev?'':'TmIJSzVcnR5aQmIZ')
+   host: 'REPLACEME',//sql 服务器
+   user: 'REPLACEME',//sql 用户名
+   password: (dev?'REPLACEME':'REPLACEME') //开发环境下 sql 密码和生产环境下 sql 密码
 });
 
 sql.connect(function (err){
@@ -116,7 +116,7 @@ note:
 nickname: 
 passwd: 
 contact: 
-email: jolliu@outlook.com
+email: 
 yanzheng: 
 submit: 233
 */
@@ -229,6 +229,6 @@ app.post('/say', async (req,res)=>{
     console.log('say',req.query);
 })
 
-app.listen(1991,()=>{
+app.listen(REPLACEME,()=>{ //服务端口（80）
   console.log('yooo!');
 })
